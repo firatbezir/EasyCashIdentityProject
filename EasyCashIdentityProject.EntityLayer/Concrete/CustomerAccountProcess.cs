@@ -14,7 +14,14 @@ namespace EasyCashIdentityProject.EntityLayer.Concrete
         public decimal Amount { get; set; }
         public DateTime TransactionDate { get; set; }
 
-
+        
 
     }
 }
+
+/* 
+    This table should have ID, Transactions, Amount, Date, Sender and Receiver properties.
+    So it's need to be related with customer account to answer which customer account has this transactions or other props that are defined in this class.
+
+    Here is the thing: as we must have two accounts to send and receive the money, this class must relate two AppUsers. Because of that, relation between these classes will be taken care of not here but later!! 11:40 pm - 11/24/2023
+ */
