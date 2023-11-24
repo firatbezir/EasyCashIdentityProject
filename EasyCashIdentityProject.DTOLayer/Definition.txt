@@ -1,0 +1,57 @@
+﻿DTOs, or Data Transfer Objects, are like data messengers in software. You can speak among the different layers by using DTOs.
+They help in talking between different parts of your app and the outside world.
+
+So, why do we need to have this DTOs?
+
+*******************
+** Data Makeover **
+*******************
+
+Hide the Mess: DTOs clean up the way data looks when it moves around your app. 
+They make sure the data inside stays private, and only the good stuff goes outside to clients.
+
+Look Good, Feel Good: They also let you style the data to fit the client's taste. 
+No unnecessary info is sent; it's like sending just the right emojis in your texts.
+
+
+************************************
+***** Cutting the Extra Weight *****
+************************************
+
+Slim Data Packages: DTOs are like packing only what you need for a trip. 
+They cut down on the data sent over the internet, making your app faster and saving on data bills.
+
+Smart Queries: When talking to databases, DTOs fetch only the must-haves. 
+It's like asking for a coffee without listing all the beans in the store.
+
+
+***********************
+*** Keeping Secrets ***
+***********************
+
+Locking Away Secrets: DTOs are like secret agents. 
+They hide sensitive info and only share what's safe with the clients.
+
+No TMI: They don't spill all the beans about how things work inside. 
+It's like not telling your life story to every stranger.
+
+
+************************************
+****** Updates without Drama *******
+************************************
+
+Change with Style: When your app's inside changes, DTOs handle it gracefully. 
+Clients can keep using the old ways until they're ready for the cool new stuff.
+
+Easygoing Evolution: DTOs let your app evolve behind the scenes without bothering the clients. 
+It's like changing your outfit without asking for permission.
+
+*****************************************
+******* App Friends without Drama *******
+*****************************************
+
+Client’s Choice: DTOs let the client and server chat without knowing all the nitty-gritty details. 
+The client just needs to get what the DTO is saying, not how it's all happening backstage.
+
+Tech Diversity: Your app can speak different tech languages, like a multilingual genius. 
+DTOs keep everyone on the same page, no matter their tech taste.
