@@ -1,0 +1,12 @@
+﻿In the abstract folder, we will contain our Services
+In the concrte folder, we will coantain our Managers
+
+Services and Managers huh? 
+
+Let's take a quick look:
+
+1. Here we will be calling the methods of each entity's own interface, which inherits from the generic interface in the data access layer, through manager classes.
+
+2. Validations rule will be contained here. So, if request is not valid, program will not go to the database.
+
+3. Extension methods will be written in the BLL when neccessary.
