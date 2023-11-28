@@ -13,9 +13,17 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
             _userManager = userManager;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
     }
 }
