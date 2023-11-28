@@ -31,9 +31,6 @@ namespace EasyCashIdentityProject.BusinessLayer.ValidationRules.AppUserValidatio
 
             RuleFor(dto => dto.ConfirmedPassword).NotEmpty().WithMessage("This field cannot be skipped!");
             RuleFor(dto => dto.ConfirmedPassword).Equal(y => y.Email).WithMessage("Passwords does not match!");
-
-
-
         }
     }
 }

@@ -1,4 +1,5 @@
 using EasyCashIdentityProject.DataAccessLayer.Concrete.Context;
+using EasyCashIdentityProject.EntityLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 
 namespace EasyCashIdentityProject.PresentationLayer
@@ -11,9 +12,10 @@ namespace EasyCashIdentityProject.PresentationLayer
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
             builder.Services.AddDbContext<Context>(options =>
              options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
+
 
             var app = builder.Build();
 
@@ -29,7 +31,7 @@ namespace EasyCashIdentityProject.PresentationLayer
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
