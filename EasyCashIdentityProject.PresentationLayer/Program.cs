@@ -1,5 +1,6 @@
 using EasyCashIdentityProject.DataAccessLayer.Concrete.Context;
 using EasyCashIdentityProject.EntityLayer.Concrete;
+using EasyCashIdentityProject.PresentationLayer.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace EasyCashIdentityProject.PresentationLayer
@@ -14,7 +15,7 @@ namespace EasyCashIdentityProject.PresentationLayer
             builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
             builder.Services.AddDbContext<Context>(options =>
              options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-            builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
+            builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 
 
             var app = builder.Build();
