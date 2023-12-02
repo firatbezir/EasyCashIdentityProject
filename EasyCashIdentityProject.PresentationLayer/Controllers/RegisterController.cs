@@ -31,7 +31,10 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                     Name = appUserRegisterDto.Name,
                     Surname = appUserRegisterDto.Surname,
                     Email = appUserRegisterDto.Email,
-                };
+                    City = "aaa",
+                    District = "bbb",
+                    ImageUrl = "ccc"
+				};
 
                 // Data adding method for identity (CreateAsync()) is handled at line below
                 var result = await _userManager.CreateAsync(appUser, appUserRegisterDto.Password);
@@ -39,9 +42,23 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                 {
                     return RedirectToAction("Index", "ConfirmMail");
                 }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                }
             }
             return View();
-        }
-
+        } 
     }
 }
+//The baxic format in the Identity: (it'll retrun you to retype your password unless your password satisfies the min req.)
+/*
+ * min 6 chars
+ * min 1 small letter
+ * min 1 capital letter
+ * min 1 symbol
+ * min 1 number
+ */
