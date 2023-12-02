@@ -11,7 +11,7 @@ namespace EasyCashIdentityProject.PresentationLayer
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
             builder.Services.AddDbContext<Context>(options =>
              options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
@@ -36,7 +36,8 @@ namespace EasyCashIdentityProject.PresentationLayer
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                //pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Register}/{action=Index}/{id?}");
 
             app.Run();
         }

@@ -27,8 +27,10 @@ namespace EasyCashIdentityProject.DTOLayer.DTOs.AppUserDTOs
         [Display(Name = "Your Password Again")]
         public string ConfirmedPassword { get; set; }
         
-        public string EmailConfirmed { get; set; }
-    }
+        //public string EmailConfirmed { get; set; }
+
+
+	}
 }
 
 // Name, surname, username, mail, password and confirmedpassword will be just enough for this class.
