@@ -14,6 +14,7 @@ namespace EasyCashIdentityProject.EntityLayer.Concrete
         public string District { get; set; }
         public string City { get; set; }
         public string ImageUrl { get; set; }
+        public int ConfirmationCode { get; set; }
 
         //AppUser may have more than one account!
         public List<CustomerAccount> CustomerAccounts { get; set; }
