@@ -1,4 +1,4 @@
-﻿@{
+﻿@model ConfirmMailViewModel;
     Layout = null;
 }
 
@@ -24,9 +24,9 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            width: 600px; /* Genişliği artırıldı */
+            width: 800px; 
             background-color: #fff;
-            margin-top: 50px; /* Çerçeve yukarı taşındı */
+            margin-top: 50px; 
         }
 
         .btn-primary {
@@ -48,11 +48,13 @@
         <h3 class="text-center mb-4">Activate Your Account</h3>
         <form method="post">
             <div class="form-group">
+                <h2>E-mail Adress of the User: @ViewBag.v</h2>
+                <br />
                 <label >User ID Value</label>
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control" asp-for="Mail" value="@ViewBag.v" />
                 <br />
                 <label for="activationCode">Enter the code you received</label>
-                <input type="text" id="activationCode" class="form-control" />
+                <input type="text" asp-for="ConfirmationCode" id="activationCode" class="form-control" />
             </div>
             <button type="submit" class="btn btn-primary">Activate</button>
         </form>
