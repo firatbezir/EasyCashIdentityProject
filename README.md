@@ -18,7 +18,8 @@ Implemented a custom identity validator to enhance user experience by providing 
 
 ### 4. Registration Process Utilizing Identity Library:
 
-Integrated the Identity library to streamline the user registration process. Leveraged the functionality provided by the library to ensure a secure and efficient registration experience for users.
+- Integrated the Identity library to streamline the user registration process. Leveraged the functionality provided by the library to ensure a secure and efficient registration experience for users.
+- User registration was achieved sending a confirmation code to the email using NETCore.MailKit library 
 
 ## Next Steps:
 
