@@ -31,8 +31,8 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                 // Email confirmed need to be true!
                 user.EmailConfirmed = true;
                 await _userManager.UpdateAsync(user);
-                return RedirectToAction("Index", "MyProfile");
-                // This must be Login-Index
+                // After fetching conf code and proceeded with it, i need to go to the LogIn Page
+                return RedirectToAction("Index", "Login");
             }
             return View();
         }
