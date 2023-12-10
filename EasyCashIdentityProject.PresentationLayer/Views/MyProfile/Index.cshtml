@@ -1,6 +1,40 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
+<!DOCTYPE html>
+<html lang="en">
 
-<h2>This is my profile page</h2>
+@* With this line, we're gonna be using the ViewComponent at the specified route (PL-Views-Shared-Components-_CustomerLayoutHeaderPartial)
+    This kind of things have been done for the sake of following clean code principles.
+*@
+@await Component.InvokeAsync("_CustomerLayoutHeaderPartial")
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            @await Component.InvokeAsync("_CustomerLayoutSidebarPartial")
+            <!-- top navigation -->
+            @await Component.InvokeAsync("_CustomerLayoutNavbarPartial")
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Fixed Sidebar <small> Just add class <strong>menu_fixed</strong></small></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            @await Component.InvokeAsync("_CustomerLayoutFooterPartial")
+            <!-- /footer content -->
+        </div>
+    </div>
+    <!-- /Script content -->
+    @await Component.InvokeAsync("_CustomerLayoutScriptPartial")
+    <!-- /Script content -->
+    <!-- Custom Theme Scripts -->
+    <script src="~/gentela-gh-pages/build/js/custom.min.js"></script>
+</body>
+</html>
