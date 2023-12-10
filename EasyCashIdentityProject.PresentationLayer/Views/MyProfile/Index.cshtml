@@ -3,24 +3,28 @@
 }
 <!DOCTYPE html>
 <html lang="en">
-
-@* With this line, we're gonna be using the ViewComponent at the specified route (PL-Views-Shared-Components-_CustomerLayoutHeaderPartial)
-    This kind of things have been done for the sake of following clean code principles.
-*@
+<!-- Hrader menu -->
 @await Component.InvokeAsync("_CustomerLayoutHeaderPartial")
-<body class="nav-md">
+<!-- Hrader menu -->
+
+<body class="nav-md footer_fixed">
     <div class="container body">
         <div class="main_container">
+
+            <!-- Sidebar menu -->
             @await Component.InvokeAsync("_CustomerLayoutSidebarPartial")
+            <!-- Sidebar menu -->W
+
             <!-- top navigation -->
             @await Component.InvokeAsync("_CustomerLayoutNavbarPartial")
             <!-- /top navigation -->
+
             <!-- page content -->
             <div class="right_col" role="main">
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Fixed Sidebar <small> Just add class <strong>menu_fixed</strong></small></h3>
+                            <h2>@RenderBody()</h2>
                         </div>
                     </div>
                 </div>
@@ -31,10 +35,11 @@
             <!-- /footer content -->
         </div>
     </div>
-    <!-- /Script content -->
+
+    <!-- /Scripts-->
     @await Component.InvokeAsync("_CustomerLayoutScriptPartial")
-    <!-- /Script content -->
-    <!-- Custom Theme Scripts -->
-    <script src="~/gentela-gh-pages/build/js/custom.min.js"></script>
+    <!-- /Scripts-->
+
+
 </body>
 </html>
