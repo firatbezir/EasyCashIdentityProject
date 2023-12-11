@@ -29,7 +29,7 @@ public LoginController(SignInManager<AppUser> signInManager, UserManager<AppUser
                 var user = await _userManager.FindByNameAsync(logInViewModel.UserName);
                 if (user.EmailConfirmed != false)
                 {
-                    return RedirectToAction("Index", "MyProfile");
+                    return RedirectToAction("Index", "MyAccounts");
                 }
                 //else: please confirm your email address
             }

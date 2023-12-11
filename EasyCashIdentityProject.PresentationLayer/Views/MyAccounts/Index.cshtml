@@ -1,4 +1,4 @@
-﻿
+﻿@model AppUserEditProfileDto
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/CustomerLayout/Index.cshtml";
@@ -56,7 +56,7 @@
                         <form class="form-horizontal form-label-left" method="post" novalidate>
 
                             <p style="font-size:smaller; color:blue;">
-                                *Please fill all the fields below 
+                                *Please fill all the fields below
                             </p>
                             <span class="section">Personal Info</span>
 
@@ -65,82 +65,66 @@
                                     Name <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="both name(s) e.g Jon Doe" required="required" type="text">
+                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" asp-for="Name" placeholder="first name(s) e.g John" required="required" type="text">
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">
-                                    Email <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lastname">
+                                    Family Name <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
+                                    <input type="text" id="lastname" asp-for="LastName" placeholder="last name e.g Doe" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">
-                                    Confirm Email <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="distrit">
+                                    District <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12">
+                                    <input type="text" id="distrit" asp-for="District" placeholder="e.g Washington DC" data-validate-linked="distrit" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">
-                                    Number <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="city">
+                                    City <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12">
+                                    <input type="text" id="city" asp-for="City" placeholder="e.g Maryland" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
-                                    Website URL <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">
+                                    Phone <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="url" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
+                                    <input type="tel" id="number" asp-for="PhoneNumber" required="required" placeholder="e.g 15019876543" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">
-                                    Occupation <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mail">
+                                    E-Mail <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="occupation" type="text" name="occupation" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
+                                    <input id="mail" type="mail" asp-for="Email" placeholder="e.g validEmail@mail.com" data-validate-length-range="3,50" class="optional form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label for="password" class="control-label col-md-3">Password</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="password" type="password" name="password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+                                    <input id="password" type="password" asp-for="Password" placeholder="******" data-validate-length="6,20" class="form-control col-md-7 col-xs-12" required="required">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Repeat Password</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="password2" type="password" name="password2" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
-                                </div>
-                            </div>
-                            <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telephone">
-                                    Telephone <span class="required">*</span>
-                                </label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="tel" id="telephone" name="phone" required="required" data-validate-length-range="8,20" class="form-control col-md-7 col-xs-12">
-                                </div>
-                            </div>
-                            <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">
-                                    Textarea <span class="required">*</span>
-                                </label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <textarea id="textarea" required="required" name="textarea" class="form-control col-md-7 col-xs-12"></textarea>
+                                    <input id="password2" type="password" asp-for="Password" placeholder="******" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
                                 </div>
                             </div>
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-8 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary" style="font-size:large;">Cancel</button>
-                                    <button id="send" type="submit" class="btn btn-success" style="font-size:large;">Submit</button>
+                                    <button id="send" type="submit" class="btn btn-success" style="font-size:large;">Update</button>
                                 </div>
                             </div>
                         </form>
