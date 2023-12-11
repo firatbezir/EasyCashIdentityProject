@@ -4,21 +4,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Hrader menu -->
-@await Component.InvokeAsync("_CustomerLayoutHeaderPartial")
-<!-- Hrader menu -->
-
+@await Component.InvokeAsync("_CustomerLayoutHeaderPartial")<!-- Hrader menu -->
 <body class="nav-md footer_fixed">
     <div class="container body">
         <div class="main_container">
-
             <!-- Sidebar menu -->
             @await Component.InvokeAsync("_CustomerLayoutSidebarPartial")
-            <!-- Sidebar menu -->W
-
+            <!-- Sidebar menu -->
             <!-- top navigation -->
             @await Component.InvokeAsync("_CustomerLayoutNavbarPartial")
             <!-- /top navigation -->
-
             <!-- page content -->
             <div class="right_col" role="main">
                 <div class="">
@@ -35,11 +30,8 @@
             <!-- /footer content -->
         </div>
     </div>
-
     <!-- /Scripts-->
     @await Component.InvokeAsync("_CustomerLayoutScriptPartial")
     <!-- /Scripts-->
-
-
 </body>
 </html>
