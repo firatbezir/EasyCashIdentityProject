@@ -53,7 +53,7 @@
                     </div>
                     <div class="x_content">
 
-                        <form class="form-horizontal form-label-left" method="post" novalidate>
+                        <form class="form-horizontal form-label-left" method="post" action="Index" controller="Login" novalidate>
 
                             <p style="font-size:smaller; color:blue;">
                                 *Please fill all the fields below
@@ -109,7 +109,7 @@
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label for="password" class="control-label col-md-3">Password</label>
+                                <label for="password" class="control-label col-md-3">New Password</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input id="password" type="password" asp-for="Password" placeholder="******" data-validate-length="6,20" class="form-control col-md-7 col-xs-12" required="required">
                                 </div>
@@ -117,7 +117,7 @@
                             <div class="item form-group">
                                 <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Repeat Password</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="password2" type="password" asp-for="Password" placeholder="******" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
+                                    <input id="password2" type="password" asp-for="ConfirmPassword" placeholder="******" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
                                 </div>
                             </div>
                             <div class="ln_solid"></div>

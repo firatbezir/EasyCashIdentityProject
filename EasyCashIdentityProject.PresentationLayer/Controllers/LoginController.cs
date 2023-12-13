@@ -9,7 +9,7 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
     {
         private readonly SignInManager<AppUser> _signInManager;
         private readonly UserManager<AppUser> _userManager;
-public LoginController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
+        public LoginController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
