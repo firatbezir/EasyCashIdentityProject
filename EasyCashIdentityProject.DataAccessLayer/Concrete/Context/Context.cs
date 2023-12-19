@@ -26,6 +26,14 @@ namespace EasyCashIdentityProject.DataAccessLayer.Concrete.Context
                 .WithMany(y => y.ReceiverCustomers)
                 .HasForeignKey(z => z.SenderID)
                 .OnDelete(DeleteBehavior.ClientNoAction);
+
+            builder.Entity<CustomerAccountProcess>()
+                .HasOne(x=> x.ReceiverCustomer)
+                .WithMany(y=> y.SenderCustomers)
+                .HasForeignKey(z => z.ReceiverID)
+                .OnDelete(DeleteBehavior.ClientNoAction);
+
+            base.OnModelCreating(builder);
         }
     }
 }
