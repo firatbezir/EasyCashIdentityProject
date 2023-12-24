@@ -17,8 +17,6 @@ namespace EasyCashIdentityProject.EntityLayer.Concrete
         public int? ReceiverID { get; set; }
         public CustomerAccount SenderCustomer { get; set; }
         public CustomerAccount ReceiverCustomer { get; set; }
-
-
     }
 }
 
@@ -28,7 +26,7 @@ namespace EasyCashIdentityProject.EntityLayer.Concrete
 
     Here is the thing: as we must have two accounts to send and receive the money, this class must relate two AppUsers. Because of that, relation between these classes will be taken care of not here but later!! 11:40 pm - 11/24/2023
 
-    DATE: 12-19-2023 : SENDERID and Receoverid were added to take care of the money transfer issue explained above.
+    DATE: 12-19-2023 : SenderId and ReceverId were added to take care of the money transfer issue explained just above.
 
  
  */
