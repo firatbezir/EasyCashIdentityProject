@@ -1,15 +1,12 @@
 # EasyCashIdentityProject README
 
-![projectDbDiagram](Sources/images/Screenshot 2023-12-24 225100.png)
+![projectDbDiagram](Sources/images/1.png)
 <br/>
-![projectDbDiagram](Sources/images/Screenshot 2023-12-24 225501.png)
+![projectDbDiagram](Sources/images/2.png)
 <br/>
-![projectDbDiagram](Sources/images/Screenshot 2023-12-24 225100.png)
+![projectDbDiagram](Sources/images/3.png)
 <br/>
-![projectDbDiagram](Sources/images/Screenshot 2023-12-24 225100.png)
-<br/>
-![projectDbDiagram](Sources/images/Merged_document (1).png)
-
+![projectDbDiagram](Sources/images/4.png)
 
 ## Project Overview:
 
