@@ -1,5 +1,16 @@
 # EasyCashIdentityProject README
 
+![projectDbDiagram](Sources/images/Screenshot 2023-12-24 225100.png)
+<br/>
+![projectDbDiagram](Sources/images/Screenshot 2023-12-24 225501.png)
+<br/>
+![projectDbDiagram](Sources/images/Screenshot 2023-12-24 225100.png)
+<br/>
+![projectDbDiagram](Sources/images/Screenshot 2023-12-24 225100.png)
+<br/>
+![projectDbDiagram](Sources/images/Merged_document (1).png)
+
+
 ## Project Overview:
 
 The EasyCashIdentityProject has made significant strides in its development journey. Here's a concise summary of the key accomplishments to date:
