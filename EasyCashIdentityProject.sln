@@ -18,10 +18,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyCashIdentityProject.DTO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyCashIdentityProject.PresentationLayer", "EasyCashIdentityProject.PresentationLayer\EasyCashIdentityProject.PresentationLayer.csproj", "{AAB7BBBA-8EB0-44DE-9381-1597FD8A73AE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sources", "Sources", "{DE6DB6C1-8FDB-46FD-9CAF-AC46976D70A9}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{C50DDB57-836C-4B71-BD13-55A6F67D5FF4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,9 +47,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{C50DDB57-836C-4B71-BD13-55A6F67D5FF4} = {DE6DB6C1-8FDB-46FD-9CAF-AC46976D70A9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F1998148-A09C-4CC1-88A6-619509A3EC02}
