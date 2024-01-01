@@ -27,7 +27,7 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             sendMoneyDto.SenderID = user.Id;
             sendMoneyDto.TransactionDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            
+             
             return View();
         }
 
