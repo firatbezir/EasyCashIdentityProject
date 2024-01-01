@@ -12,10 +12,12 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
     {
         //to reach to the user that logged in the system
         private readonly UserManager<AppUser> _userManager;
+        private readonly Context _context;
 
-        public SendMoneyController(UserManager<AppUser> userManager)
+        public SendMoneyController(UserManager<AppUser> userManager, Context context)
         {
             _userManager = userManager;
+            _context = context;
         }
 
         [HttpGet]
@@ -26,11 +28,8 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Index(SendMoneyDto sendMoneyDto)
-        {
-
-            var context = new Context();//getting error here!
-
-            var receiverAccountNumberID = context.CustomerAccounts.Where(x => x.CustomerAccountNumber == sendMoneyDto.ReceiverAccountNumber).Select(y => y.CustomerAccountID).FirstOrDefault();
+        {         
+            var receiverAccountNumberID = _context.CustomerAccounts.Where(x => x.CustomerAccountNumber == sendMoneyDto.ReceiverAccountNumber).Select(y => y.CustomerAccountID).FirstOrDefault();
 
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             sendMoneyDto.SenderID = user.Id;
