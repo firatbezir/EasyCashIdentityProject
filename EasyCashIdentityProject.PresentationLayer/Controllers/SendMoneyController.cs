@@ -1,7 +1,10 @@
-﻿using EasyCashIdentityProject.DTOLayer.DTOs.CustomerAccountProcessDTOs;
+﻿using EasyCashIdentityProject.DataAccessLayer.Concrete.Context;
+using EasyCashIdentityProject.DTOLayer.DTOs.CustomerAccountProcessDTOs;
 using EasyCashIdentityProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace EasyCashIdentityProject.PresentationLayer.Controllers
 {
@@ -24,11 +27,18 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(SendMoneyDto sendMoneyDto)
         {
+
+            var context = new Context();//getting error here!
+
+            var receiverAccountNumberID = context.CustomerAccounts.Where(x => x.CustomerAccountNumber == sendMoneyDto.ReceiverAccountNumber).Select(y => y.CustomerAccountID).FirstOrDefault();
+
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             sendMoneyDto.SenderID = user.Id;
             sendMoneyDto.TransactionDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            sendMoneyDto.TransactionType = "Havale";
+            sendMoneyDto.ReceiverID = receiverAccountNumberID;
              
-            return View();
+            return RedirectToAction("Index", "Deneme");
         }
 
 
