@@ -362,3 +362,10 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /EasyCashIdentityProject.PresentationLayer/appsettings.json
+/EasyCashIdentityProject.DataAccessLayer/Migrations/20231123202502_first_mig.cs
+/EasyCashIdentityProject.DataAccessLayer/Migrations/20231123205815_mig-edit-identity.cs
+/EasyCashIdentityProject.DataAccessLayer/Migrations/20231123205921_mig_add_appuser_approle_tables.cs
+/EasyCashIdentityProject.DataAccessLayer/Migrations/20231124201839_mig_add_relation_customerAccount_appUser.cs
+/EasyCashIdentityProject.DataAccessLayer/Migrations/20231203194922_mig_confirmation_code.cs
+/EasyCashIdentityProject.DataAccessLayer/Migrations/20231219210403_add-sender-receiver-customers-relations.cs
+/EasyCashIdentityProject.DataAccessLayer/Migrations/ContextModelSnapshot.cs

@@ -7,6 +7,7 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
 {
     public class SendMoneyController : Controller
     {
+        //to reach to the user that logged in the system
         private readonly UserManager<AppUser> _userManager;
 
         public SendMoneyController(UserManager<AppUser> userManager)
@@ -21,12 +22,12 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> IndexAsync(SendMoneyDto sendMoneyDto)
+        public async Task<IActionResult> Index(SendMoneyDto sendMoneyDto)
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             sendMoneyDto.SenderID = user.Id;
             sendMoneyDto.TransactionDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            // i stopped here!! Follow the necessary steps to go ahaed!!
+            
             return View();
         }
 
