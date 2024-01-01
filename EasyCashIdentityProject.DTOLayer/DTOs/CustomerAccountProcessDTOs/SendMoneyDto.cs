@@ -13,5 +13,6 @@ namespace EasyCashIdentityProject.DTOLayer.DTOs.CustomerAccountProcessDTOs
         public DateTime TransactionDate { get; set; }
         public int SenderID { get; set; }
         public int ReceiverID { get; set; }
+        public string ReceiverAccountNumber { get; set; }
     }
 }
