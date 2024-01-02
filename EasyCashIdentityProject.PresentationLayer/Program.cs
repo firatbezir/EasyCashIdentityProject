@@ -1,4 +1,8 @@
+using EasyCashIdentityProject.BusinessLayer.Abstract;
+using EasyCashIdentityProject.BusinessLayer.Concrete;
+using EasyCashIdentityProject.DataAccessLayer.Abstract;
 using EasyCashIdentityProject.DataAccessLayer.Concrete.Context;
+using EasyCashIdentityProject.DataAccessLayer.EntitiyFramework;
 using EasyCashIdentityProject.EntityLayer.Concrete;
 using EasyCashIdentityProject.PresentationLayer.Models;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +19,11 @@ namespace EasyCashIdentityProject.PresentationLayer
             builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
             builder.Services.AddDbContext<Context>(options =>
              options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
             builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
+            
+            builder.Services.AddScoped<ICostumerAccountProcessDal, EfCustomerAccountProcessDal>();
+            builder.Services.AddScoped<ICustomerAccountProcessService, CustomerAccountProcessManager>();
 
 
             var app = builder.Build();
