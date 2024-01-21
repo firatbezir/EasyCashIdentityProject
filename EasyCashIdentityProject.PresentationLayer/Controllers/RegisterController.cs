@@ -65,7 +65,6 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                     smtpClient.Authenticate("mywebappdevelopmentprojects@gmail.com", "eolurjojoegmxoid");
                     smtpClient.Send(mimeMessage);
                     smtpClient.Disconnect(true);
-
                     TempData["Mail"] = appUserRegisterDto.Email;
 
                     return RedirectToAction("Index", "ConfirmMail");
@@ -78,7 +77,8 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                     }
                 }
             }
-            return View();
+            return View();               
+                
         } 
     }
 }
@@ -89,4 +89,5 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
  * min 1 capital letter
  * min 1 symbol
  * min 1 number
+ * 
  */
