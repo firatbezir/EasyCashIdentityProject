@@ -24,8 +24,14 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string currency)
         {
+            //when it's first time, default currency is TL
+            if (currency == null)
+            {
+                currency = "TL";
+            }
+            ViewBag.currency = currency;
             return View();
         }
 
@@ -35,7 +41,12 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             var receiverAccountNumberID = _context.CustomerAccounts.Where(x => x.CustomerAccountNumber == sendMoneyDto.ReceiverAccountNumber).Select(y => y.CustomerAccountID).FirstOrDefault();
 
-            var senderAccountnumberID = _context.CustomerAccounts.Where(acc=> acc.AppUserID == user.Id).Where(user=> user.CustomerAccountCurrency == "TL").Select(curr=> curr.CustomerAccountID).FirstOrDefault();
+            //at this point, we need to get the sender's account number id according to the currency type
+            //if the currency type is TL, we need to get the TL account number id, same goes for the other currencies
+            // and we make sure account of user has the same currency type if not, user must be warned 
+            //string currencyType = ViewBag.currency;
+            //var senderAccountnumberID = _context.CustomerAccounts.Where(acc => acc.AppUserID == user.Id).Where(user => user.CustomerAccountCurrency == currencyType).Select(acc => acc.CustomerAccountID).FirstOrDefault();
+            var senderAccountnumberID = _context.CustomerAccounts.Where(acc => acc.AppUserID == user.Id).Where(user => user.CustomerAccountCurrency == "TL").Select(acc => acc.CustomerAccountID).FirstOrDefault();
 
             var values = new CustomerAccountProcess()
             {
