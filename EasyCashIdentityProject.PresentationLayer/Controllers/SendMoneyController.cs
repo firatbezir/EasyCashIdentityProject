@@ -44,6 +44,7 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
             //at this point, we need to get the sender's account number id according to the currency type
             //if the currency type is TL, we need to get the TL account number id, same goes for the other currencies
             // and we make sure account of user has the same currency type if not, user must be warned 
+            // and we need to get the sender's account number id according to the currency type
             //string currencyType = ViewBag.currency;
             //var senderAccountnumberID = _context.CustomerAccounts.Where(acc => acc.AppUserID == user.Id).Where(user => user.CustomerAccountCurrency == currencyType).Select(acc => acc.CustomerAccountID).FirstOrDefault();
             var senderAccountnumberID = _context.CustomerAccounts.Where(acc => acc.AppUserID == user.Id).Where(user => user.CustomerAccountCurrency == "TL").Select(acc => acc.CustomerAccountID).FirstOrDefault();
