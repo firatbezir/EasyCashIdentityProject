@@ -33,6 +33,11 @@ namespace EasyCashIdentityProject.BusinessLayer.Concrete
             return _costumerAccountProcessDal.GetList();
         }
 
+        public List<CustomerAccountProcess> TGetRecentProcessesBySenderId(int id)
+        {
+            return _costumerAccountProcessDal.GetRecentProcessesBySenderId(id);
+        }
+
         public void TInsert(CustomerAccountProcess entity)
         {
             _costumerAccountProcessDal.Insert(entity);

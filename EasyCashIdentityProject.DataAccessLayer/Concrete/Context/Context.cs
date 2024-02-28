@@ -7,7 +7,6 @@ namespace EasyCashIdentityProject.DataAccessLayer.Concrete.Context
     // Identity context will acceppt the AppUser class as a user, AppRole as a role and int as key value. 
     public class Context : IdentityDbContext<AppUser, AppRole, int>
     {
-
         public Context(DbContextOptions<Context> options) : base(options)
         {
 
