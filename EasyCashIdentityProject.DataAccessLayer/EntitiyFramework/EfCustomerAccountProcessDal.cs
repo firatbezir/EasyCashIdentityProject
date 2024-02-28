@@ -23,7 +23,7 @@ namespace EasyCashIdentityProject.DataAccessLayer.EntitiyFramework
 
         public List<CustomerAccountProcess> GetRecentProcessesBySenderId(int id)
         {
-            var userList = _context.CustomerAccountProcesses.Include(y => y.SenderCustomer).Where(x => x.SenderID == id || x.ReceiverID == id).ToList();
+            var userList = _context.CustomerAccountProcesses.Include(y => y.SenderCustomer).ThenInclude(z => z.AppUser).Where(x => x.SenderID == id || x.ReceiverID == id).ToList();
             return userList;
         }
     }
