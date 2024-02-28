@@ -25,6 +25,9 @@ namespace EasyCashIdentityProject.PresentationLayer
             builder.Services.AddScoped<ICostumerAccountProcessDal, EfCustomerAccountProcessDal>();
             builder.Services.AddScoped<ICustomerAccountProcessService, CustomerAccountProcessManager>();
 
+            builder.Services.AddScoped<ICustomerAccountDal, EfCustomerAccountDal>();
+            builder.Services.AddScoped<ICustomerAccountService, CustomerAccountManager>();
+
 
             var app = builder.Build();
 
